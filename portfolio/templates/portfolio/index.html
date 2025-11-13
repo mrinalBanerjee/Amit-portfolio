@@ -1,59 +1,235 @@
-{% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Amit Bikram Pattnayak — Portfolio</title>
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amit Bikram Pattnayak | Executive Assistant</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <!-- Set default font and configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#007AFF', // Used in original nav
+                        'dark-bg': '#1f2937',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        /* Custom styles for the Hero section, matching the original structure */
+        .home {
+            min-height: 80vh; /* Adjusted for better mobile view */
+            background: linear-gradient(135deg, #007AFF 0%, #004d99 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        .home-content {
+            max-width: 900px;
+        }
+        .text-one {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+        .text-two {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        .text-three {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: #d1d5db; /* Light gray */
+            margin-bottom: 2rem;
+        }
+        /* Mobile adjustments */
+        @media (max-width: 640px) {
+            .text-two { font-size: 2.25rem; }
+            .text-three { font-size: 1.25rem; }
+            .home { min-height: 70vh; }
+        }
+        /* Style for the Contact link in footer to override Tailwind color */
+        .footer-link {
+            color: white !important;
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <header class="card">
-      <div class="avatar">AB</div>
-      <div>
-        <h1>Amit Bikram Pattnayak</h1>
-        <p>Executive Assistant — Fleetguard Filters Pvt. Ltd., Jamshedpur</p>
-      </div>
-    </header>
+<body class="bg-gray-50 font-sans scroll-smooth">
 
-    <main>
-      <section class="card">
-        <h2>About</h2>
-        <p>Professional Executive Assistant with experience supporting operations at Fleetguard Filters Pvt. Ltd. — skilled in office coordination, communication, and document management.</p>
-      </section>
+<!-- Navigation Bar -->
+<nav class="bg-primary-blue text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <a class="text-2xl font-extrabold tracking-wide" href="#home">Amit Bikram Pattnayak</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-4">
+                <a class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-primary-blue transition duration-150" href="#home">Home</a>
+                <a class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-primary-blue transition duration-150" href="#experience">Skills</a>
+                <a class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-primary-blue transition duration-150" href="#work-history">Experience</a>
+                <a class="px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-primary-blue transition duration-150" href="#contact">Contact</a>
+            </div>
 
-      <section class="card">
-        <h2>Skills</h2>
-        <ul>
-          <li>Office Coordination</li>
-          <li>Administrative Support</li>
-          <li>Microsoft Office</li>
-          <li>Scheduling</li>
-          <li>Communication</li>
-        </ul>
-      </section>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden p-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-blue-400">
+            <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-600 transition duration-150" href="#home">Home</a>
+            <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-600 transition duration-150" href="#experience">Skills</a>
+            <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-600 transition duration-150" href="#work-history">Experience</a>
+            <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-600 transition duration-150" href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
 
-      <section class="card">
-        <h2>Media</h2>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/amit-bikram-pattnayak-922878103" target="_blank">LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/amit_bikram__/" target="_blank">Instagram</a></li>
-          <li><a href="https://www.youtube.com/@amitbikram123" target="_blank">YouTube</a></li>
-        </ul>
-      </section>
+<!-- Home/Hero Section -->
+<section class="home" id="home">
+    <div class="home-content">
+        <div class="text">
+            <div class="text-one">Hello, I'm</div>
+            <div class="text-two">Amit Bikram Pattnayak</div>
+            <div class="text-three">Executive Assistant / Quality Engineer</div>
+            <div class="button">
+                <a href="#contact" class="inline-block px-8 py-3 bg-white text-primary-blue font-bold rounded-full shadow-xl hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    MESSAGE ME
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-      <section class="card">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-      </section>
-    </main>
+<!-- Professional Summary & Skills Section -->
+<section class="max-w-4xl mx-auto my-12 p-6 bg-white rounded-xl shadow-lg" id="experience">
+    <h1 class="text-3xl font-bold mb-4 text-gray-800 border-b pb-2">Professional Summary & Skills</h1>
+    <p class="mb-2 text-lg"><strong>Current Role:</strong> Executive Assistant at Fleetguard Filters Pvt. Ltd., Jamshedpur</p>
+    <p class="mb-2 text-lg"><strong>Core Experience:</strong> 10+ years as Quality Assurance Engineer at RSB Transmissions (I) Ltd.</p>
+    <p class="mb-4 text-lg"><strong>Education:</strong> B.Tech. in Mechanical Engineering from PKACE, Bargarh.</p>
+    
+    <div class="border-t pt-4 mt-4">
+        <p class="font-bold text-xl mb-3 text-gray-700">Key Skills:</p>
+        <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-1 bg-green-500 text-white font-medium text-sm rounded-full shadow-md">Quality System</span>
+            <span class="px-4 py-1 bg-green-500 text-white font-medium text-sm rounded-full shadow-md">Manufacturing</span>
+            <span class="px-4 py-1 bg-green-500 text-white font-medium text-sm rounded-full shadow-md">Engineering</span>
+            <span class="px-4 py-1 bg-green-500 text-white font-medium text-sm rounded-full shadow-md">Management</span>
+            <span class="px-4 py-1 bg-green-500 text-white font-medium text-sm rounded-full shadow-md">Executive Support</span>
+        </div>
+    </div>
+</section>
 
-    <footer>
-      <p>© 2025 Amit Bikram Pattnayak. Built with Django.</p>
-    </footer>
-  </div>
+<!-- Work History Section (NEW) -->
+<section id="work-history" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6 max-w-4xl">
+        <h2 class="text-4xl font-extrabold text-center mb-10 text-gray-800 border-b pb-4">Professional Experience</h2>
+        
+        <!-- Experience Card 1: Current Role -->
+        <div class="mb-8 p-6 border-l-4 border-primary-blue bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300">
+            <h3 class="text-2xl font-bold text-gray-800">Executive Assistant</h3>
+            <p class="text-primary-blue font-semibold mt-1">Fleetguard Filters Pvt. Ltd., Jamshedpur</p>
+            <p class="text-sm text-gray-500 mb-4">May 2023 – Present</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                <li>Streamline executive communications and manage complex calendar scheduling for the Managing Director.</li>
+                <li>Prepare confidential reports, presentations, and correspondence for internal and external stakeholders.</li>
+                <li>Coordinate inter-departmental projects and ensure timely execution of management directives.</li>
+                <li>Act as a liaison between the MD and department heads, fostering efficient organizational flow.</li>
+            </ul>
+        </div>
+        
+        <!-- Experience Card 2: Previous Role -->
+        <div class="p-6 border-l-4 border-gray-400 bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300">
+            <h3 class="text-2xl font-bold text-gray-800">Quality Assurance Engineer (10+ Years)</h3>
+            <p class="text-gray-700 font-semibold mt-1">RSB Transmissions (I) Ltd., Jamshedpur</p>
+            <p class="text-sm text-gray-500 mb-4">Jan 2013 – May 2023</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                <li>Managed end-to-end Quality Management Systems (QMS) adherence for automotive components, reducing defect rates by **15%**.</li>
+                <li>Led a team of 5 QA inspectors, overseeing inspection and testing procedures to meet **IATF 16949 standards**.</li>
+                <li>Developed and implemented statistical process control (**SPC**) techniques to monitor and improve manufacturing processes.</li>
+                <li>Conducted internal and external audits, resolving non-conformities and driving continuous improvement initiatives (Kaizen, 5S).</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-  <script src="{% static 'js/main.js' %}"></script>
+<!-- About Me Section -->
+<section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-6 max-w-4xl">
+        <h2 class="text-4xl font-extrabold text-center mb-10 text-gray-800">About Me</h2>
+        <div class="bg-gray-50 p-8 rounded-xl shadow-2xl">
+            <div class="mx-auto text-center">
+                <p class="text-xl font-light mb-6 text-gray-600">
+                    Hello! I am a highly motivated professional with over a decade of experience in Quality Assurance and Engineering, complemented by my current role as an Executive Assistant. My expertise lies in streamlining operations, ensuring quality standards (QMS), and providing robust management support.
+                </p>
+                <p class="text-lg text-gray-700">
+                    I thrive on bridging the technical world of manufacturing with high-level administrative demands, using my background to drive efficiency and operational excellence. I am currently focused on leveraging my skills to take on complex management and support roles where precision and reliability are key.
+                </p>
+                <a href="#!" class="inline-block mt-8 px-6 py-3 bg-primary-blue text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
+                    Download My Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer/Contact Section -->
+<footer class="bg-dark-bg text-center text-white" id="contact">
+    <div class="container mx-auto p-8 pb-0">
+        <section class="mb-8">
+            <h3 class="text-2xl font-semibold mb-4">Connect With Me</h3>
+            <!-- Social media buttons - using Tailwind for styling -->
+            <div class="flex justify-center space-x-4">
+                <a class="w-10 h-10 flex items-center justify-center rounded-full border border-white hover:bg-primary-blue transition duration-300" href="#!" role="button" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-lg"></i></a>
+                <a class="w-10 h-10 flex items-center justify-center rounded-full border border-white hover:bg-primary-blue transition duration-300" href="#!" role="button" aria-label="Twitter"><i class="fab fa-twitter text-lg"></i></a>
+                <a class="w-10 h-10 flex items-center justify-center rounded-full border border-white hover:bg-primary-blue transition duration-300" href="#!" role="button" aria-label="Google"><i class="fab fa-google text-lg"></i></a>
+                <a class="w-10 h-10 flex items-center justify-center rounded-full border border-white hover:bg-primary-blue transition duration-300" href="#!" role="button" aria-label="Facebook"><i class="fab fa-facebook-f text-lg"></i></a>
+                <a class="w-10 h-10 flex items-center justify-center rounded-full border border-white hover:bg-primary-blue transition duration-300" href="#!" role="button" aria-label="Instagram"><i class="fab fa-instagram text-lg"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <div class="text-center p-4 bg-red-600">
+        &copy; 2025 Profile Built by:
+        <a class="footer-link font-semibold hover:underline" href="#">BANERJEEXIT</a>
+    </div>
+</footer>
+
+<script>
+    // JavaScript to handle the mobile menu toggle and close on link click
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+</script>
+
 </body>
 </html>
