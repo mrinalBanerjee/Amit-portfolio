@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Custom styles for the Hero section, matching the original structure */
+.home {
+    min-height: 80vh; /* Adjusted for better mobile view */
+    background: linear-gradient(135deg, #007AFF 0%, #004d99 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+.home-content {
+    max-width: 900px;
+}
+.text-one {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+.text-two {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+.text-three {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #d1d5db; /* Light gray */
+    margin-bottom: 2rem;
+}
+/* Mobile adjustments */
+@media (max-width: 640px) {
+    .text-two { font-size: 2.25rem; }
+    .text-three { font-size: 1.25rem; }
+    .home { min-height: 70vh; }
+}
+/* Style for the Contact link in footer to override Tailwind color */
+.footer-link {
+    color: white !important;
+}
+
+/* Tailwind Configuration (Usually handled in <script>, but provided here for context) */
+/* tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                'primary-blue': '#007AFF', // Used in original nav
+                'dark-bg': '#1f2937',
+            },
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+            }
+        }
+    }
+}
+*/
