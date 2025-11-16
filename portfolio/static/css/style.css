@@ -41,19 +41,3 @@
 .footer-link {
     color: white !important;
 }
-
-/* Tailwind Configuration (Usually handled in <script>, but provided here for context) */
-/* tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-                'primary-blue': '#007AFF', // Used in original nav
-                'dark-bg': '#1f2937',
-            },
-            fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-            }
-        }
-    }
-}
-*/

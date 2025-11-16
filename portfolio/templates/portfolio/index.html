@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amit Bikram Pattnayak | Executive Assistant</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    
+    <link rel="stylesheet" href="style.css"> 
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary-blue': '#007AFF', // Used in original nav
+                        'primary-blue': '#007AFF',
                         'dark-bg': '#1f2937',
                     },
                     fontFamily: {
@@ -21,52 +26,6 @@
             }
         }
     </script>
-    <style>
-        /* ... CSS content from above block goes here ... */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
-        /* Custom styles for the Hero section, matching the original structure */
-        .home {
-            min-height: 80vh; /* Adjusted for better mobile view */
-            background: linear-gradient(135deg, #007AFF 0%, #004d99 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 2rem;
-        }
-        .home-content {
-            max-width: 900px;
-        }
-        .text-one {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 0.5rem;
-        }
-        .text-two {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-        .text-three {
-            font-size: 1.75rem;
-            font-weight: 500;
-            color: #d1d5db; /* Light gray */
-            margin-bottom: 2rem;
-        }
-        /* Mobile adjustments */
-        @media (max-width: 640px) {
-            .text-two { font-size: 2.25rem; }
-            .text-three { font-size: 1.25rem; }
-            .home { min-height: 70vh; }
-        }
-        /* Style for the Contact link in footer to override Tailwind color */
-        .footer-link {
-            color: white !important;
-        }
-    </style>
 </head>
 <body class="bg-gray-50 font-sans scroll-smooth">
 
@@ -139,14 +98,23 @@
             <h3 class="text-2xl font-bold text-gray-800">Executive Assistant</h3>
             <p class="text-primary-blue font-semibold mt-1">Fleetguard Filters Pvt. Ltd., Jamshedpur</p>
             <p class="text-sm text-gray-500 mb-4">May 2023 – Present</p>
-        
+            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                <li>Senior Management (MD/VP) को उच्च-स्तरीय प्रशासनिक और लॉजिस्टिकल सहायता प्रदान की, जिसमें कैलेंडर, यात्रा और मीटिंग सामग्री तैयार करना शामिल है।</li>
+                <li>विभिन्न विभागों (Manufacturing, Sales, Quality) के बीच सुचारू समन्वय (smooth coordination) सुनिश्चित किया।</li>
+                <li>गोपनीय दस्तावेज़ों और मासिक/तिमाही प्रदर्शन रिपोर्टों का कुशलता से प्रबंधन किया।</li>
+            </ul>
         </div>
         
         <div class="p-6 border-l-4 border-gray-400 bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300">
             <h3 class="text-2xl font-bold text-gray-800">Quality Assurance Engineer (10+ Years)</h3>
             <p class="text-gray-700 font-semibold mt-1">RSB Transmissions (I) Ltd., Jamshedpur</p>
             <p class="text-sm text-gray-500 mb-4">Jan 2013 – May 2023</p>
-            
+            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                <li>ISO/TS 16949 मानकों के अनुसार गुणवत्ता प्रबंधन प्रणालियों (QMS) को लागू किया और बनाए रखा।</li>
+                <li>रूट कॉज एनालिसिस (RCA) का उपयोग करके उत्पादन के दौरान शून्य दोष (zero defect) सुनिश्चित करने के लिए निरीक्षण प्रोटोकॉल का नेतृत्व किया।</li>
+                <li>7 QC Tools और Kaizen का उपयोग करके निर्माण प्रक्रियाओं में सुधार किया, जिससे स्क्रैप और रीवर्क दरों में कमी आई।</li>
+                <li>सप्लायर योग्यता का आकलन किया और ग्राहक शिकायतों को प्रभावी ढंग से हल किया।</li>
+            </ul>
         </div>
     </div>
 </section>
@@ -185,6 +153,8 @@
         <a class="footer-link font-semibold hover:underline" href="#">BANERJEEXIT</a>
     </div>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
